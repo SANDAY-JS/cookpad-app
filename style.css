@@ -1,0 +1,263 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+body {
+  background: #d3cce3; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #e9e4f0,
+    #d3cce3
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #e9e4f0,
+    #d3cce3
+  ); /*W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-family: sans-serif;
+  /* 
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover; */
+}
+
+.mobile-container {
+  background: #fff;
+  width: 400px;
+  box-shadow: 0 0 5px #33331a;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+img {
+  max-width: 100%;
+}
+
+header {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header input {
+  border: none;
+  background-color: #eee;
+  border-radius: 3px;
+  font-family: inherit;
+  padding: 0.5rem 1rem;
+}
+
+header button {
+  background: transparent;
+  color: #aaa;
+  font-size: 1.5rem;
+  border: none;
+  outline: none;
+  margin-left: 10px;
+}
+
+.fav-wrapper {
+  text-align: center;
+  background: rgb(233, 199, 255);
+}
+
+.fav-container {
+  padding: 0.25rem 1rem;
+  text-align: center;
+  display: flex;
+}
+
+.fav-meals {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  /* overflow-x: scroll; */
+  /* white-space: nowrap; */
+  overflow: visible;
+}
+
+.fav-meals li {
+  position: relative;
+  margin: 5px;
+  width: 85px;
+}
+
+.fav-meals li .clear {
+  opacity: 0;
+  background: transparent;
+  position: absolute;
+  top: -0.5rem;
+  right: -0.5rem;
+  border: none;
+  font-size: 1.2rem;
+}
+
+.fav-meals li:hover .clear {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.fav-meals li img {
+  border: 2px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 5px #33331a;
+  object-fit: cover;
+  height: 70px;
+  width: 70px;
+  cursor: pointer;
+}
+
+.fav-meals li span {
+  display: inline-block;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+
+.fav-meals li:hover span {
+  white-space: unset;
+  max-width: 100%;
+  overflow: unset;
+}
+
+.meal {
+  margin: 1.5rem;
+  box-shadow: 0 0 5px #3333331a;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.meal-header {
+  position: relative;
+}
+
+.meal-header .random {
+  position: absolute;
+  top: 1rem;
+  padding: 0.25rem 1rem;
+  background: #fff;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.meal-header img {
+  object-fit: cover;
+  height: 250px;
+  width: 100%;
+}
+
+.meal-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1rem;
+}
+
+.meal-body h4 {
+  margin: 0;
+}
+
+.meal-body .fav-btn {
+  border: none;
+  outline: none;
+  background: transparent;
+  color: rgb(197, 188, 188);
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.meal-body .fav-btn.active {
+  color: rebeccapurple;
+}
+
+.no-results {
+  text-align: center;
+  color: #e65d0d;
+  margin: 2rem auto;
+}
+
+.meal-info-container {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+  overflow-y: scroll;
+}
+
+.meal-info-container.hidden {
+  pointer-events: none;
+  opacity: 0;
+}
+
+.meal-info {
+  /* position: absolute;
+  top: 100px;
+  left: 0; */
+  background: #fff;
+  padding: 0 2rem;
+  border: 3px solid rgb(75, 65, 65);
+  border-radius: 5px;
+  position: relative;
+  margin-top: 1rem;
+  width: 67.5%;
+  max-width: 600px;
+  max-height: 100vh;
+  overflow: auto;
+}
+
+.meal-info h1 {
+  text-align: center;
+}
+
+.meal-info .close-popup {
+  background: transparent;
+  cursor: pointer;
+  border: none;
+  font-size: 1.5rem;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.meal-info div {
+  padding: 2rem 0;
+}
+
+.meal-info div h2 {
+  text-align: center;
+}
+
+.meal-info div h3 {
+  text-align: left;
+}
+
+.meal-info div > p {
+  margin: 1rem 0;
+}
+
+.meal-info div ul {
+  list-style: inside;
+  margin-left: 1rem;
+}
+
+.meal-info div ul li {
+  list-style: unset;
+}
